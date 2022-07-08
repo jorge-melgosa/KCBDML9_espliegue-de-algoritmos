@@ -10,8 +10,8 @@ from tensorflow.keras.preprocessing.sequence import pad_sequences
 
 from app.core.messages import NO_VALID_PAYLOAD
 from app.models.payload import TextPayload, payload_to_text
-from app.models.prediction import SentimentPredictionResult
-from app.core.enums import Sentiment
+from app.models.prediction import TrollPredictionResult
+from app.core.enums import PersonTroll
 from app.core.config import (
     KERAS_MODEL,
     TOKENIZER_MODEL,
@@ -22,7 +22,7 @@ from app.core.config import (
 #    SENTIMENT_THRESHOLD,
 
 
-class SentimentAnalysisModel:
+class TrollAnalysisModel:
     def __init__(
         self, model_dir,
     ):
@@ -39,7 +39,7 @@ class SentimentAnalysisModel:
         tokenizer_path = os.path.join(self.model_dir, TOKENIZER_MODEL)
         self.tokenizer = pickle.load(tf.io.gfile.GFile(tokenizer_path, mode="rb"))
 
-    def _decode_sentiment(self, score: float) -> str:
+    def _decode_troll(self, score: float) -> str:
       label = TROLL
       if score <= 0.5:
           label = PERSON
@@ -60,12 +60,12 @@ class SentimentAnalysisModel:
 
     def _post_process(
         self, text: str, prediction: float, start_time: float
-    ) -> SentimentPredictionResult:
+    ) -> TrollPredictionResult:
         logger.debug("Post-processing prediction.")
-        # Decode sentiment
-        label = self._decode_sentiment(prediction)
+        # Decode troll
+        label = self._decode_troll(prediction)
 
-        return SentimentPredictionResult(
+        return TrollPredictionResult(
             label=label, score=prediction, elapsed_time=(time.time() - start_time),
         )
 

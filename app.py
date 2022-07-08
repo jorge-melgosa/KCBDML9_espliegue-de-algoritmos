@@ -59,10 +59,10 @@ def predict():
         st.stop()
 
 
-st.title("Sentiment Analysis Predictions")
+st.title("Troll Analysis Predictions")
 
 st.markdown(
-    "Welcome! With this app you can predict the sentiment of a given text using Deep Learning :smile:"
+    "Welcome! With this app you can predict the troll of a given text using Deep Learning :smile:"
 )
 
 if session_state.url is None:

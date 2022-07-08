@@ -1,6 +1,6 @@
 from enum import Enum
 
 
-class Sentiment(Enum):
+class PersonTroll(Enum):
     PERSON = "PERSON"
     TROLL = "TROLL"

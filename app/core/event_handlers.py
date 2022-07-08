@@ -4,12 +4,12 @@ from fastapi import FastAPI
 from loguru import logger
 
 from app.core.config import DEFAULT_MODEL_PATH
-from app.services.models import SentimentAnalysisModel
+from app.services.models import TrollAnalysisModel
 
 
 def _startup_model(app: FastAPI) -> None:
     model_path = DEFAULT_MODEL_PATH
-    model_instance = SentimentAnalysisModel(model_path)
+    model_instance = TrollAnalysisModel(model_path)
     app.state.model = model_instance
 
 

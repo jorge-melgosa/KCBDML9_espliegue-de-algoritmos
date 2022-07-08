@@ -1,9 +1,9 @@
 from pydantic import BaseModel
 
-from app.core.enums import Sentiment
+from app.core.enums import PersonTroll
 
 
-class SentimentPredictionResult(BaseModel):
-    label: Sentiment
+class TrollPredictionResult(BaseModel):
+    label: PersonTroll
     score: float
     elapsed_time: float
