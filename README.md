@@ -13,6 +13,6 @@ En esta práctica se desarrollará un sistema autónomo basado en IA y desplegad
 - Inferencia en streaming de un canal de Twitch con el microservicio anterior. (3 puntos).
 
 ### Resumen de la implementación:
-Hemos realizado la tarea en [Google Colab](https://colab.research.google.com/) llamado [MEL_Detección_Trolls_en_Twitch.ipynb](https://github.com/jorge-melgosa/KCBDML9_espliegue-de-algoritmos/tree/main/colab/MEL_Detección_Trolls_en_Twitch.ipynb)
+Hemos realizado la tarea en [Google Colab](https://colab.research.google.com/) llamado [MEL_Detección_Trolls_en_Twitch.ipynb](https://github.com/jorge-melgosa/KCBDML9_espliegue-de-algoritmos/tree/main/practica/MEL_Detección_Trolls_en_Twitch.ipynb)
 
 El colab tiene toda la información necesaria para entender el desarrollo realizado con el objetivo de realizar la practica planteada. 
